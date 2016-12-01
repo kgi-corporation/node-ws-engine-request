@@ -82,7 +82,7 @@ Thu Dec 01 2016 10:08:54 GMT-0600 (CST) - WebSocket connection closed
 ## Change Log
 
 ```
-0.1.0
+0.2.0
 - Initial public release.
 ```
 

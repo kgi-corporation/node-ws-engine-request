@@ -1,6 +1,6 @@
 {
   "name": "ws-engine-request",
-  "version": "0.1.0",
+  "version": "0.2.0",
   "description": "Connect express / restify server with engine over WebSocket connection.",
   "main": "dist/index.js",
   "scripts": {
