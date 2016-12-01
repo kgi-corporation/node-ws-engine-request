@@ -2,6 +2,9 @@
 
 When REST endpoint is hit connect to engine/worker server with a WebSocket connection.
 
+[![CircleCI](https://circleci.com/gh/kgi-corporation/node-ws-engine-request.svg?style=shield)](https://circleci.com/gh/kgi-corporation/node-ws-engine-request)
+[![npm version](https://badge.fury.io/js/ws-engine-request.svg)](https://badge.fury.io/js/ws-engine-request)
+
 ## Install
 
 ```
