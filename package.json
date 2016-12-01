@@ -9,6 +9,10 @@
     "pretest": "npm run build",
     "test": "mocha 'test/**/*.mocha.js'"
   },
+  "repository": {
+    "type": "git",
+    "url": "https://github.com/kgi-corporation/node-ws-engine-request.git"
+  },
   "keywords": [
     "websocket",
     "ws",
