@@ -3,7 +3,7 @@
 'use strict';
 
 var restify = require('restify');
-var wec = require('../../lib');
+var wer = require('../../');
 
 let server = restify.createServer({name: 'Restify Example - WebSocket Engine Connection'});
 
@@ -11,9 +11,9 @@ server.use(restify.acceptParser(server.acceptable));
 server.use(restify.queryParser());
 server.use(restify.bodyParser());
 
-server.get('/engine', wec.request('ws://localhost:5000', null, request => {
+server.get('/engine', wer.request('ws://localhost:5000', null, request => {
     return request.data;
-}), wec.format);
+}), wer.format);
 
 server.listen(8080, () => {
     console.log('%s listening at %s', server.name, server.url);

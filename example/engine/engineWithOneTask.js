@@ -2,9 +2,9 @@
 
 'use strict';
 
-var wec = require('../../lib');
+var wer = require('../../');
 
-wec.server({
+wer.server({
     port: 5000
 }, (messageData, callback) => {
     let error = null;

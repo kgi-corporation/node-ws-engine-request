@@ -23,9 +23,9 @@ npm run-script build
 
 'use strict';
 
-var wec = require('../../lib');
+var wer = require('ws-engine-request');
 
-wec.server({
+wer.server({
     port: 5000
 }, (messageData, callback) => {
     let error = null;
@@ -38,6 +38,13 @@ wec.server({
 });
 ```
 
+```
+kgilbert-mac:ws-engine-request kgilbert$ node example/engine/engineWithOneTask.js 
+Thu Dec 01 2016 10:08:49 GMT-0600 (CST) - WebSocket connection closed
+Thu Dec 01 2016 10:08:53 GMT-0600 (CST) - WebSocket connection closed
+Thu Dec 01 2016 10:08:54 GMT-0600 (CST) - WebSocket connection closed
+```
+
 ### Restify Example
 
 ```javascript
@@ -46,7 +53,7 @@ wec.server({
 'use strict';
 
 var restify = require('restify');
-var wec = require('../../lib');
+var wer = require('ws-engine-request');
 
 let server = restify.createServer({name: 'Restify Example - WebSocket Engine Connection'});
 
@@ -54,11 +61,19 @@ server.use(restify.acceptParser(server.acceptable));
 server.use(restify.queryParser());
 server.use(restify.bodyParser());
 
-server.get('/engine', wec.request('ws://localhost:5000', null, null), wec.format);
+server.get('/engine', wer.request('ws://localhost:5000', null, null), wer.format);
 
 server.listen(8080, () => {
     console.log('%s listening at %s', server.name, server.url);
 });
+```
+
+```
+kgilbert-mac:ws-engine-request kgilbert$ node example/api/restify.js 
+Restify Example - WebSocket Engine Connection listening at http://[::]:8080
+Thu Dec 01 2016 10:08:49 GMT-0600 (CST) - WebSocket connection closed
+Thu Dec 01 2016 10:08:53 GMT-0600 (CST) - WebSocket connection closed
+Thu Dec 01 2016 10:08:54 GMT-0600 (CST) - WebSocket connection closed
 ```
 
 ## Change Log
