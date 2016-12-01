@@ -7,9 +7,9 @@ const WebSocketServer = WebSocket.Server;
 
 /**
  * Creates a new webSocket server instance with tasks
- * @param {Object} config - Configuration object container
- * @param {Number} config.port - Port for WebSocket server to listen on
- * @param {String} config.name - Name of engine for logging and responses
+ * @param {Object} [config] - Configuration object container
+ * @param {Number} [config.port] - Port for WebSocket server to listen on
+ * @param {String} [config.name] - Name of engine for logging and responses
  * @param {(Object|Function)} tasks - Container for task instructions
  */
 export function server (config, tasks) {
